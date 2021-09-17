@@ -63,6 +63,8 @@ while True:
 
 ### Evidence
 
+<img src="WIN-20210917-15-19-55-Pro (2).gif" alt="servodemo" width="500">
+
 ### Wiring
 
 ### Reflection
