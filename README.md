@@ -88,18 +88,44 @@ while True:
 
 ## CircuitPython_LCD
 
-### Description & Code
+This assignment was to make it so the distance on the ultrasonic sensor corresponds with the color displayed on the Metro board.
 
 ```python
+import adafruit_hcsr04
+import time
+import board
+import neopixel
 
+sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.D2, echo_pin=board.D3)
+dot = neopixel.NeoPixel(board.NEOPIXEL, 1)
+
+dot.brightness = 0.1
+
+while True:
+    try:
+        dist = sonar.distance
+        print((dist))
+        r = max(min(15*(20-dist),255),0)
+        g = max(min(15*(dist-20),255),0)
+        b = max(min(-abs(15*(20-dist))+225,255),0)
+        dot.fill((int(r), int(g), int(b)))
+    except RuntimeError:
+        print("Retrying!")
+    time.sleep(0.1)
 ```
 
 ### Evidence
-
+     
+<img src="https://github.com/ezell38/Hello_CircuitPython/blob/main/Images/IMG-86812912-3 (1).gif?raw=true" alt="CircuitPython_LCD" width="500">
+     
 ### Wiring
+
+<img src="https://github.com/ezell38/Hello_CircuitPython/blob/main/Images/Capture.1.PNG?raw=true" alt="CircuitPythonDistance" width="500">
+Capture.1.PNG
 
 ### Reflection
 
+This assignment was hard because I kept saving the code to a file on my computer and not my Metro board. I also used some code from another student and didn't adjust my wiring to fit their code which messed up my Ultrasonic sensor. 
 
 
 
