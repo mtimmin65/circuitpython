@@ -167,6 +167,8 @@ while True:
 
 ### Evidence
 
+
+<img src="https://github.com/mtimmin65/circuitpython/blob/main/ezgif-3-777ed7b0fb7c.gif?raw=true" alt="Italian Trulli">
 ### Wiring
 
 ### Reflection
